@@ -17,11 +17,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+      
+      - name: Install pnpm
+        run: npm install pnpm@latest-10  
 
       - name: Install dependancies  
-        run: npm ci
+        run: pnpm ci
 
       - name: Run tests
-        run: npm run test -- --coverage
+        run: pnpm run test --coverage
 
      
